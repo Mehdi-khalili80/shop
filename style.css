@@ -1,0 +1,357 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  line-height: 1.6;
+  background: whitesmoke;
+  color: #333;
+}
+
+/* هدر */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #0056b3;
+  color: #ccc;
+  padding: 15px 30px;
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.2);
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+header ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+header ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+header ul li a:hover {
+  text-decoration: underline;
+  cursor: progress;
+}
+
+/* بنر */
+#hero {
+  text-align: center;
+  padding: 50px 20px;
+  background: darkcyan;
+  color: white;
+}
+#hero h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+#hero p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+#hero button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  background: #ffc107;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s ease, transform 0.3s ease; 
+}
+
+
+#hero button:hover {
+  background: #e0a800;
+  transform: rotate(-5deg) scale(1.05)
+}
+
+
+#hero button span {
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  filter: blur(2px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+#hero button:hover span {
+  opacity: 1;
+  filter: blur(0);
+}
+
+/* محصولات */
+#products {
+  padding: 40px 20px;
+  text-align: center;
+}
+#products h2 {
+  margin-bottom: 20px;
+}
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;        
+  gap: 20px;              
+}
+
+.product-grid .product-card {
+  flex: 1 1 220px;       
+}
+.product-card {
+  background: #fff;
+  border: 1px solid #0d96d1;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+}
+.product-card img {
+  max-width: 100%;
+  border-radius: 6px;
+}
+.product-card h3 {
+  margin: 10px 0 5px;
+}
+.product-card .price3 {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  color: #0b77ea;
+  margin: 8px 0;
+  cursor: pointer;
+}
+
+
+.product-card .price3:hover {
+  text-decoration: line-through;
+  color: #888; 
+}
+
+
+.product-card .price3::after {
+  content: "200,000 تومان"; 
+  position: absolute;
+  left: 0;
+  top: 100%;
+  font-weight: bold;
+  color: #28a745; 
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+.product-card .price3:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.product-card .price2 {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  color: #0b77ea;
+  margin: 8px 0;
+  cursor: pointer;
+}
+
+
+.product-card .price2:hover {
+  text-decoration: line-through;
+  color: #888; 
+}
+
+
+.product-card .price2::after {
+  content: "80,000 تومان"; 
+  position: absolute;
+  left: 0;
+  top: 100%;
+  font-weight: bold;
+  color: #28a745; 
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+.product-card .price2:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.product-card .price1 {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  color: #0b77ea;
+  margin: 8px 0;
+  cursor: pointer;
+}
+
+
+.product-card .price1:hover {
+  text-decoration: line-through;
+  color: #888; 
+}
+
+
+.product-card .price1::after {
+  content: "100,000 تومان"; 
+  position: absolute;
+  left: 0;
+  top: 100%;
+  font-weight: bold;
+  color: #28a745; 
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+.product-card .price1:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.product-card button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  background: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+
+.product-card button:hover {
+  background: #0056b3;
+  animation: pulse 1s ease-in-out infinite; 
+}
+
+
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+
+/* درباره ما */
+#about {
+  padding: 40px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+/* تماس */
+#contact {
+  padding: 40px 20px;
+  background: #f1f1f1;
+}
+#contact form {
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#contact input, #contact textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+#contact input:hover, #contact textarea:hover{
+  border: 1px solid #16abdc;  
+}
+
+#contact button {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #28a745;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+#contact button:hover {
+  background: #218838;
+}
+
+
+/* فوتر */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #007bff;
+  color: #fff;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  header nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  header ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #hero h2 {
+    font-size: 24px;
+  }
+
+  .product-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #contact form {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  #hero h2 {
+    font-size: 20px;
+  }
+
+  #hero p {
+    font-size: 16px;
+  }
+
+  header .logo {
+    font-size: 18px;
+  }
+}
+
